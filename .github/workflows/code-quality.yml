@@ -15,8 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build and test (iOS 16.4)
-        run: xcodebuild test -scheme JCDDecoder -destination 'platform=iOS Simulator,OS=16.4,name=iPhone 14 Pro'
+      - name: Build and test
+        run: xcodebuild test -scheme JCDDecoder -destination 'platform=iOS Simulator,name=iPhone 14 Pro'
 
-      - name: Build and test (iOS 17.0)
-        run: xcodebuild test -scheme JCDDecoder -destination 'platform=iOS Simulator,OS=17.0,name=iPhone 14 Pro'
+  test-macos:
+    runs-on: macos-13
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build and test
+        run: xcodebuild test -scheme JCDDecoder -destination 'platform=macOS,arch=x86_64'

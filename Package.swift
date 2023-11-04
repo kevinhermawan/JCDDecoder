@@ -5,7 +5,11 @@ import PackageDescription
 
 let package = Package(
     name: "JCDDecoder",
-    platforms: [.iOS(.v15)],
+    platforms: [
+        .iOS(.v13),
+        .macOS(.v13),
+        .macCatalyst(.v13)
+    ],
     products: [
         .library(
             name: "JCDDecoder",
